@@ -33,7 +33,9 @@ def main():
         if key_lst[pg.K_LEFT]:#練習10-4
             kk_rct.move_ip((-1, 0))#練習10-4
         if key_lst[pg.K_RIGHT]:#練習10-4
-            kk_rct.move_ip((+1, 0))#練習10-4
+            #kk_rct.move_ip((+1, 0))#練習10-4
+            kk_rct.move_ip((+2, 0))#演習課題1-2
+        kk_rct.move_ip((-1, 0))#演習課題1-1
         #screen.blit(kk_img, [300, 200])#練習4
         screen.blit(kk_img, kk_rct)#練習10-5
         pg.display.update()
