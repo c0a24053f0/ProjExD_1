@@ -26,20 +26,31 @@ def main():
         screen.blit(bg_img2, [-x+1600, 0])#練習8
         screen.blit(bg_img, [-x+3200, 0])#練習9
         key_lst = pg.key.get_pressed()#練習10-3
+        dx = 0
+        dy = 0
         if key_lst[pg.K_UP]:#練習10-4
-            kk_rct.move_ip((0, -1))#練習10-4
+            #kk_rct.move_ip((0, -1))#練習10-4
+            dy = -1#演習課題2
         if key_lst[pg.K_DOWN]:#練習10-4
-            kk_rct.move_ip((0, +1))#練習10-4
+            #kk_rct.move_ip((0, +1))#練習10-4
+            dy = +1#演習課題2
         if key_lst[pg.K_LEFT]:#練習10-4
-            kk_rct.move_ip((-1, 0))#練習10-4
+            #kk_rct.move_ip((-1, 0))#練習10-4
+            dx = -1#演習課題2
         if key_lst[pg.K_RIGHT]:#練習10-4
             #kk_rct.move_ip((+1, 0))#練習10-4
-            kk_rct.move_ip((+2, 0))#演習課題1-2
-        kk_rct.move_ip((-1, 0))#演習課題1-1
+            #kk_rct.move_ip((+2, 0))#演習課題1-1-②
+            dx = +2#演習課題2
+        #kk_rct.move_ip((-1, 0))#演習課題1-1-①
+        dx -= 1#演習課題2
+        kk_rct.move_ip(dx, dy)#演習課題2
+        
+        #if key_lst[pg.K_RIGHT]:#演習課題2
+            #dx = +1#演習課題2
         #screen.blit(kk_img, [300, 200])#練習4
         screen.blit(kk_img, kk_rct)#練習10-5
         pg.display.update()
-        tmr += 1        
+        tmr += 1
         clock.tick(200)#練習6
 
 
